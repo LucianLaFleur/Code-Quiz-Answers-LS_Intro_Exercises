@@ -1,0 +1,115 @@
+#Chap1_Q3 to 7
+
+puts "---Question 3---"
+#Objective: Write a hash to strore movie titles with the
+#year they came out, then use puts to print the years
+
+#note : I am using strings instead of symbols to clean up the
+# movie names for the output
+
+fav_movies_release_year = {
+  "Cleopatra"           => 1963,
+  "The Terminator"      => 1984,
+  "Jurassic Park"       => 1993,
+  "Donnie Darko"        => 2001,
+  "Howl's Moving Castle"=> 2005
+}
+
+fav_movies_release_year.each do |k, v|
+  puts v
+end
+
+personal_fav = fav_movies_release_year.select do |k, v|
+  if k == "Donnie Darko"
+  p "My personal favorite is #{k}, which came out in #{v}"
+  end
+end
+
+# I don't "need" to save this as its own variable, but I did like this
+#experiment where I could define a variable, and get a printed output to the
+#screen.
+
+puts "---Question 4---"
+# Use the dates from the previos example, store them in an array
+# and then print them to the screen
+
+years = fav_movies_release_year.values.to_a
+puts years
+# Alternatively, I can use the "puts" method and target Array[index_number] to
+# do this in a more manual fashion, like :
+#puts years[0]
+#puts years[1]
+#... and so on, but that's violating DRY too much...
+
+# I can't think of anything particularly fun to do with this, so I'm moving on
+
+puts "---Question 5---"
+#output the factorial of the numbers 5,6,7, and 8
+#Instructions don't explicitly say to output results to the screen, but...
+#I'm going to assume it's "okay" to return this value to the screen, since
+# that makes it easier to discuss, and easier to check visually
+
+factorial5 = (5*4*3*2*1)
+puts factorial5
+#referencing the previous variable, I can cut out some repetition
+factorial6 = factorial5*6
+puts factorial6
+factorial7 = factorial6*7
+puts factorial7
+factorial8 = factorial7*8
+puts factorial8
+
+#  I can't really figure out how to itterate over the items here...
+# I don't know how to code-ify it, but I have one idea...
+#      for a given number x,  factorial_array = *(1..x)
+#     example given x==5, factorial_array = [1,2,3,4,5]
+#     I don't know to make the elements multiply by each other...
+#     Is there a command to do .split and replace the commas in the Array
+#     with multiplication asters (*)?
+#
+#below code is broken, I can't figure how to use max and min
+# to get the range and multiply it together. I'm just leaving this and ignoring
+#this problem for now, since I can't do it alone
+#I'm just writing a bit of my thought process here
+# --- BROKEN AS ALL HECK ---
+# factorial_array = [1,2,3,4,5]
+# totes_fact = 0
+# factorial_array.each do |n|
+#     unless n== factorial_array.max do totes_fact += (n *(n+1)) end
+#   end
+# end
+# puts totes_fact
+
+puts "---Question 6---"
+#Objective: calculate the squares of 3 float numbers of your choosing
+# and output results to screen
+#my 3 random floats are as follows: 32.69 (a float with no variable assignment)
+# a truly random float, called the variable "root_beer" below
+# and 3.14159 , which is my "cherry_float",
+
+puts 32.69 * 32.69
+
+root_beer = rand(1.00 .. 9.99)
+puts root_beer*root_beer
+# ??? root_beer*self returns nothing here, but I can't describe why...
+
+
+    cherry_float = 3.14159
+    puts cherry_float**2
+    puts "and just to show that the above means the same thing as below..."
+    puts cherry_float*cherry_float
+
+puts "--- Question 7 ---"
+puts "the person misplaced a ) when they needed a }, probably messing up
+closing a hash or a function."
+puts "Please check my code commentary for a more detailed answer."
+
+# Objective: understand the following error message
+# SyntaxError: (irb):2: syntax error, unexpected ')', expecting '}'
+#   from /usr/local/rvm/rubies/ruby-2.0.0-rc2/bin/irb:16:in `<main>'
+
+# It looks like someone tried to terminate a hash with a parenthesis " ) "
+# instead of a curly-brace " } " . Could also have been a mistake in
+# writing a method with curly-braces. Anyway, you should find the close-
+# parenthesis ) and put a close curly-brace } in its place.
+# the find hotkey will help with the search, ctrl + F in my Atom editor

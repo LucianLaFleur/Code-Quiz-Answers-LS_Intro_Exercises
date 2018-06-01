@@ -1,0 +1,82 @@
+#IntroExCh1
+
+puts "Question 1"
+#Objective: Concatenate two strings to return your first and last name as
+# a single string.
+
+puts "Oleander" + " Elican 1"
+
+#just a spacer below for breaking up output
+puts "----"
+#or I could save the returned value as its own variable
+
+
+full_name_Var = "Oleander" + " Elican 2"
+puts full_name_Var
+
+puts "----"
+
+#or I could make a prompt-string and use gets.chomp to get user input
+# for having the user submit his own name for first and last name variables
+
+
+def full_name_Fun
+  first_name = "Oleander"
+  last_name = " Elican 3"
+  puts (first_name + last_name)
+end
+#Now I call the function to run it below
+full_name_Fun
+
+puts "\n"
+puts "  --  Question 2  --"
+#Objective: Use some operator combo with div and % that takes a 4-digit number &
+#finds the falue in the 1) Thousands 2) hundreds 3) tens 4) ones places
+
+n1 = 1234
+#division returns whole numbers rounded down, so we just need to divide
+#by 1000 to get how many thousands are in <n1>
+thousands = n1 / 1000
+#for the hundreds, we need to get what remains after the thousands are divided
+#out, so modulo 1000 gives us the remaining hundreds
+hundreds = n1 % 1000 / 100
+#same deal going down for tens
+tens = n1 % 1000 % 100 /10
+# ones are the remainder after tens get divided out, so we use modulo
+# all the way
+ones = n1 % 1000 % 100 % 10
+
+#the above code prints nothing, but I'll try and demonstrate the concept more
+#in the function below
+
+
+
+def four_digit_cruncher
+  # to make it interactive, I can use the following couple of lines
+  #puts "Please enter a 4-digit number to break down"
+  #n2 = gets.chomp
+  #but I'm just going to use a random number in the thousands
+  n2 = rand (1000..9999)
+  puts "RN-Geezus hath bestowed upon us #{n2} for this glorious cycle"
+  #next line helps guide user input if I use gets.chomp and
+  #the user inputs something aside from a thousands-and-change number
+  if n2 < 1000 || n2 > 9999 then puts "Sorry, I can only take a 4-digit number"
+    # ??? Umm... I'm not sure how to make this loop back and ask the user
+    # ??? to try again with another input...
+  else
+    thousands = n2 / 1000
+    puts "The digit in the thousands place is #{thousands}"
+    hundreds = n2 % 1000 / 100
+    puts "Next, the digit in the hundreds place is #{hundreds}"
+    tens = n2 % 1000 % 100 /10
+    puts "After that, the tens digit is #{tens}"
+    ones = n2 % 1000 % 100 % 10
+    puts "Finally, #{ones} is in the ones place"
+  end
+end
+
+four_digit_cruncher
+#reminder: because I'm playing with rand, the output will be different each time
+# but this demonstrates the function will read whatever input number is n2 and
+# out strings will call on each digit to make the output more readable
+# (and hopefully a bit humerous) to our users
