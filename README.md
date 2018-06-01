@@ -2,9 +2,11 @@
 
 (Exercises from Introduction to Ruby, for Launch School, organized by chapter)
 
+***
 If you want to see the cool program I made, then look at Ch5, question 2, where
 I went on a big tanget to make a simple chatbot to demonstrate a loop
 with a conversational interaction.
+***
 
 To cover more general matters: 
 I'm clumping together a lot of the CH1 exercises into just a couple of files
